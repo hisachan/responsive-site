@@ -1,0 +1,177 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+// font-family
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+// colors
+$baseColor: #fdfcf6;
+$subColor: #bea300;
+$keyColor: #14c0c9;
+$fontColor: #4c4c4c;
+
+
+/* Base
+------------------------------------------------------------*/
+html{ font-size: 62.5%; }
+
+body{
+  color: $fontColor;
+  font-size: 1.4rem;
+  font-family:$baseFontFamily;
+  line-height:1.6;
+  letter-spacing: 0.1em; 
+  background-color: $baseColor;
+}
+
+a {
+  @include link-colors($keyColor, darken($keyColor, 10%), lighten($keyColor, 5%), darken($keyColor, 10%));
+  text-decoration: none;
+}
+
+/* Align
+------------------------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+
+/* Layout
+------------------------------------------------------------*/
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Font
+------------------------------------------------------------*/
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+// desktop
+@media (min-width: 769px) {
+
+/* Base
+------------------------------------------------------------*/
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Header
+------------------------------------------------------------*/
+
+.box {
+  background-image: url("../images/MKJ_yukidarumatotree_TP_V4.jpg");
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  
+}
+
+
+/* Contents
+------------------------------------------------------------*/
+// Common Styles
+section {
+  padding: 60px 0;
+  .container {
+    width: 90%;
+    @extend .block-center;
+  }
+  h2 {
+    @extend .abel;
+    font-size: 3.2rem;
+    @extend .uppercase;
+  }
+}
+
+// text
+#Christmas {
+  background-color: $subColor;
+  .container {
+    @include display-flex;
+    justify-content: space-between;
+    @include flex-direction(column);    // テキストボックスを縦に並べる
+  }
+  h2 {
+    color: $baseColor;
+    margin-bottom: 60px;
+  }
+  .text-box {
+    @include flex(1);
+    margin: 10px 0;                     // 上下にマージン
+    padding: 20px;
+    background-color: $baseColor;
+    @include border-radius(4px);
+    @include box-sizing(border-box);
+  }
+  h3 {
+    @extend .abel;
+    @extend .uppercase;
+    color: $keyColor;
+    margin-bottom:10px;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+}
+
+// desktop
+@media (min-width: 769px) {
+
+  // text
+  #Christmas {
+    .container {
+      @include flex-direction(row);     // テキストボックスを横に並べる
+      justify-content: space-between;
+    }
+    .text-box {
+      margin: 0 10px;                   // 左右にマージン
+    }
+  }
+}
+
+
+
+/* Footer
+------------------------------------------------------------*/
+
+    
+footer {
+  text-align: center;
+    background-color: $subColor;
+    
+   
+   .button-contact {
+    display: block;
+    width: 25px;
+    height: 25px;
+    color: #FFF;
+    margin:0 auto;
+    background-color: #14c0c9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+    }
+  }
+
+// desktop
+@media (min-width: 769px) {
+
+  // Contact
+  #contact {
+    ul {
+      a {
+        &:hover {
+          background-color: darken($keyColor, 10%);
+        }
+      }
+    }
+  }
+}
