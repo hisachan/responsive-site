@@ -5,8 +5,8 @@ $baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino 
 
 // colors
 $baseColor: #fdfcf6;
-$subColor: #bea300;
-$keyColor: #14c0c9;
+$subColor: #ff6347;
+$keyColor: #ffff00;
 $fontColor: #4c4c4c;
 
 
@@ -109,15 +109,13 @@ section {
     @include flex-direction(column);    // テキストボックスを縦に並べる
   }
   h2 {
-    color: $baseColor;
+    color: #ffff00;
     margin-bottom: 60px;
   }
   .text-box {
     @include flex(1);
     margin: 10px 0;                     // 上下にマージン
-    padding: 20px;
-    background-color: $baseColor;
-    @include border-radius(4px);
+    background-color: #90ee90;
     @include box-sizing(border-box);
   }
   h3 {
@@ -127,6 +125,10 @@ section {
     margin-bottom:10px;
     font-size: 2.4rem;
     font-weight: bold;
+  }
+  .text-box p {
+    padding: 20px;
+    background-color: $baseColor
   }
 }
 
@@ -152,8 +154,9 @@ section {
 
     
 footer {
+  padding: 20px 0; 
   text-align: center;
-    background-color: $subColor;
+    background-color: #8fbc8f;
     
    
    .button-contact {
@@ -162,7 +165,7 @@ footer {
     height: 25px;
     color: #FFF;
     margin:0 auto;
-    background-color: #14c0c9;
+    background-color: #90ee90;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; 
